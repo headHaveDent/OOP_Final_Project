@@ -255,6 +255,10 @@ class MainGUI:
 
         name = simpledialog.askstring("Change username", "Enter new username:",
                                       initialvalue=self.username, parent=self.root)
+        #If canceled
+        if name is None:
+            return
+        
         name = str(name).lstrip()
         print(name)
         ALLOWED_CHARACTERS = set(string.ascii_letters + string.digits + "_" + "." + string.whitespace)
